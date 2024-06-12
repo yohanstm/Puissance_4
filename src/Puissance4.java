@@ -106,8 +106,20 @@ public class Puissance4 extends Application {
      * @return le panel contenant le titre du jeu
      */
     private Pane titre(){
-        // A implémenter
-        return null;
+        HBox banniere = new HBox();
+        this.boutonMaison = new Button("Menu");
+        boutonMaison.setMinHeight(100);
+        boutonMaison.setMinWidth(266.666666667);
+        this.boutonParametres = new Button("Paramètres");
+        boutonParametres.setMinHeight(100);
+        boutonParametres.setMinWidth(266.666666667);
+        this.boutoninfo = new Button("Régles"); 
+        boutoninfo.setMinHeight(100);
+        boutoninfo.setMinWidth(266.666666667);
+        this.boutoninfo.setOnAction(new ControleurInfos(this));
+        banniere.setStyle("-fx-background-color: lightgrey;");
+        banniere.getChildren().addAll(boutonMaison, boutonParametres, boutoninfo);
+        return banniere;
     }
 
     // /**
@@ -208,7 +220,8 @@ public class Puissance4 extends Application {
      * @return l'alerte avec les règles du jeu
      */
     public Alert popUpReglesDuJeu(){
-        Alert alert = new Alert(Alert.AlertType.INFORMATION, "");
+        Alert alert = new Alert(Alert.AlertType.INFORMATION, "Comment jouer au Puissance 4 ? \n"+
+                                                                "Le but du jeu est d'aligner une suite de 4 pions de même couleur sur une grille. Chaque joueur dispose de 21 pions d'une couleur (par convention, en général jaune ou rouge). Tour à tour, les deux joueurs placent un pion dans la colonne de leur choix, le pion coulisse alors jusqu'à la position la plus basse possible dans ladite colonne à la suite de quoi c'est à l'adversaire de jouer. Le vainqueur est le joueur qui réalise le premier un alignement (horizontal, vertical ou diagonal) consécutif d'au moins quatre pions de sa couleur. Si, alors que toutes les cases de la grille de jeu sont remplies, aucun des deux joueurs n'a réalisé un tel alignement, la partie est déclarée nulle. ");
         alert.setTitle("Jeu du Puissance 4");
         DialogPane dialogPane = alert.getDialogPane();
         dialogPane.setMinWidth(400);
@@ -240,7 +253,7 @@ public class Puissance4 extends Application {
     public void start(Stage stage) {
         stage.setTitle("Puissance 4");
         stage.setScene(this.laScene());
-        this.modeAccueil();
+        // this.modeAccueil();
         stage.show();
     }
 
