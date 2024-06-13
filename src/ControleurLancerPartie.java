@@ -11,7 +11,7 @@ public class ControleurLancerPartie implements EventHandler<ActionEvent> {
     /**
      * modèle du jeu
      */
-    private IA modelePuissance4;
+    private modelePuissance4 modelePuissance4;
     /**
      * vue du jeu
      **/
@@ -21,7 +21,7 @@ public class ControleurLancerPartie implements EventHandler<ActionEvent> {
      * @param modelePuissance4 modèle du jeu
      * @param p vue du jeu
      */
-    public ControleurLancerPartie(IA modelePuissance4, Puissance4 vuePuissance4) {
+    public ControleurLancerPartie(modelePuissance4 modelePuissance4, Puissance4 vuePuissance4) {
         this.modelePuissance4 = modelePuissance4;
         this.vuePuissance4 = vuePuissance4;
     }

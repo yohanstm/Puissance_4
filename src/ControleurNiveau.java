@@ -10,13 +10,13 @@ public class ControleurNiveau implements EventHandler<ActionEvent> {
     /**
      * modèle du jeu
      */
-    private IA modelePendu;
+    private modelePuissance4 modelePendu;
 
 
     /**
      * @param modelePendu modèle du jeu
      */
-    public ControleurNiveau(IA modelePendu) {
+    public ControleurNiveau(modelePuissance4 modelePendu) {
         this.modelePendu = modelePendu;
     }
 

@@ -10,7 +10,7 @@ public class RetourAccueil implements EventHandler<ActionEvent> {
     /**
      * modèle du jeu
      */
-    private IA modelePuissance4;
+    private modelePuissance4 modelePuissance4;
     /**
      * vue du jeu
      **/
@@ -20,7 +20,7 @@ public class RetourAccueil implements EventHandler<ActionEvent> {
      * @param modelePuissance4 modèle du jeu
      * @param vuePendu vue du jeu
      */
-    public RetourAccueil(IA modelePuissance4, Puissance4 vuePuisssance4) {
+    public RetourAccueil(modelePuissance4 modelePuissance4, Puissance4 vuePuisssance4) {
         this.modelePuissance4 = modelePuissance4;
         this.vuePuisssance4 = vuePuisssance4;
     }

@@ -35,7 +35,7 @@ public class Puissance4 extends Application {
     /**
      * modèle du jeu
      **/
-    private IA modelePuissance4;
+    private modelePuissance4 modelePuissance4;
     /**
      * Liste qui contient les images du jeu
      */
@@ -164,7 +164,7 @@ public class Puissance4 extends Application {
 
     public void modeAccueil(){
         this.panelCentral.setCenter(fenetreAccueil());
-        this.modelePuissance4.setNiveau(IA.FACILE);
+        this.modelePuissance4.setNiveau(modelePuissance4.FACILE);
     }
     
     public void modeJeu(){
