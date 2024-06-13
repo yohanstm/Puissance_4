@@ -11,7 +11,6 @@
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-
 <HBox alignment="CENTER" prefHeight="361.0" prefWidth="612.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <VBox alignment="TOP_CENTER" prefHeight="358.0" prefWidth="400.0">
@@ -21,7 +20,7 @@
                   <Font size="24.0" />
                </font>
                <padding>
-                  <Insets bottom="20.0" top="20.0" />
+                  <Insets bottom="20.0" top="10.0" />
                </padding>
             </Label>
             <GridPane gridLinesVisible="true">
@@ -127,7 +126,7 @@
                         <Font size="22.0" />
                      </font>
                      <VBox.margin>
-                        <Insets />
+                        <Insets top="10.0" />
                      </VBox.margin>
                      <padding>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
@@ -157,7 +156,7 @@
                         <Font name="System Bold" size="18.0" />
                      </font>
                      <VBox.margin>
-                        <Insets top="30.0" />
+                        <Insets top="60.0" />
                      </VBox.margin>
                   </Button>
                </children>
