@@ -1,27 +1,11 @@
-import javafx.application.Application;
-import javafx.application.Platform;
-import javafx.fxml.FXMLLoader;
-import javafx.geometry.Insets;
-import javafx.scene.text.Font;
-import javafx.scene.text.FontWeight;
-import javafx.stage.FileChooser;
-import javafx.stage.Stage;
-import javafx.geometry.Pos;
-import javafx.scene.Scene;
-import javafx.scene.control.*;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
-import javafx.scene.layout.*;
-import javafx.scene.paint.Color;
-import javafx.scene.text.Text;
-import javafx.scene.text.TextAlignment;
-import javafx.scene.control.ButtonBar.ButtonData ;
+package Puissance_4.src;
 
-import java.util.List;
-import java.util.Optional;
-import java.util.Arrays;
-import java.io.File;
-import java.util.ArrayList;
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
 
 
 /**
@@ -50,7 +34,7 @@ public class Puissance5 extends Application {
         stage.setTitle("OBAMA battle royale");
         loaderjeu = new FXMLLoader(this.getClass().getResource("jeu.fxml"));
         stage.setScene(this.laScene());
-        this.accueil();
+        this.jeu();
         stage.show();
     }
 
@@ -64,7 +48,7 @@ public class Puissance5 extends Application {
         fenetre.setTop(top);
         this.jeu();
         fenetre.setCenter(this.panelCentral);
-        return new Scene(fenetre, 500, 600);
+        return new Scene(fenetre, 700, 500);
     }
 
 
@@ -72,15 +56,21 @@ public class Puissance5 extends Application {
         return new Pane();
     }
 
-    private Pane accueil(){
-        return new Pane();
+    private void accueil(){
+        this.panelCentral = new Pane();
     }
 
-    private Pane param(){
-        return new Pane();
+    private void param(){
+        this.panelCentral = new Pane();
     }
 
-    private Pane jeu(){
+    private void jeu(){
+        try {
+            this.panelCentral = loaderjeu.load();
+            for(int i=0; i<largeur; )
+        } catch (Exception e) {
+            this.panelCentral = new Pane();
+        }
         
     }
 
