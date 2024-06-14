@@ -32,12 +32,12 @@ public class modelePuissance4 {
     private int joueurActuel = this.joueur1;
 
 
-    public modelePuissance4(int[][] grille, int joueur1, int joueur2) {
+    public modelePuissance4(int joueur1, int joueur2) {
         this.joueur1 = joueur1;
         this.joueur2 = joueur2;
         for (int x = 0 ; x<rows ; x++){
             for (int y = 0 ; y<columns ; y++){
-                grille[rows][columns] = 0;
+                this.grille[rows][columns] = 0;
             }
         }
     }
@@ -77,76 +77,71 @@ public class modelePuissance4 {
 
 
     public boolean gagneVertical(int[][] grille){
-        boolean gagne = true;
-        for (int y = 0 ; y<columns ; y++){
-            try {
-                gagne = true;
-                for (int i = 0 ; i<4 ; i++){
-                    if (grille[rows][columns] == grille[rows+i][columns] && grille[rows][columns] != 0)
-                        return false;
-                }
-            }catch (Exception e) {
+        for (int x = 0 ; x<rows-4 ; x++){
+            for (int y = 0 ; y<columns-4 ; y++){
+                try {
+                    for (int i = 0 ; i<4 ; i++){
+                        if (grille[rows][columns] == grille[rows+i][columns] && grille[rows+1][columns] != 0)
+                            return false;
+                    }
+                }catch (Exception e) {
+            }
             }
         }
-        return gagne;
+        return true;
     }
+
 
     public boolean gagneHorizontal(int[][] grille){
-        boolean gagne = true;
-        for (int y = 0 ; y<columns ; y++){
-            try {
-                gagne = true;
-                for (int i = 0 ; i<4 ; i++){
-                    if (grille[rows][columns] == grille[rows][columns+1] && grille[rows][columns] != 0)
-                        return false;
-                }
-            }catch (Exception e) {
+        for (int x = 0 ; x<rows-4 ; x++){
+            for (int y = 0 ; y<columns-4 ; y++){
+                try {
+                    for (int i = 0 ; i<4 ; i++){
+                        if (grille[rows][columns] == grille[rows][columns+i] && grille[rows][columns+1] != 0)
+                            return false;
+                    }
+                }catch (Exception e) {
+            }
             }
         }
-        return gagne;
+        return true;
     }
 
 
-    public boolean gagneDiagonal(int[][] grille){
-        boolean gagne = true;
-        for (int y = 0 ; y<columns ; y++){
-            try {
-                gagne = true;
-                for (int i = 0 ; i<4 ; i++){
-                    if (grille[rows][columns] == grille[rows+i][columns+i] && grille[rows][columns] != 0)
-                        return false;
-                }
-            }catch (Exception e) {
+    public boolean gagneDiagonalD(int[][] grille){
+        for (int x = 0 ; x<rows-4 ; x++){
+            for (int y = 0 ; y<columns-4 ; y++){
+                try {
+                    for (int i = 0 ; i<4 ; i++){
+                        if (grille[rows][columns] == grille[rows+i][columns+i] && grille[rows+i][columns+i] != 0)
+                            return false;
+                    }
+                }catch (Exception e) {
+            }
             }
         }
-        return gagne;
+        return true;
     }
 
 
-    public boolean gagneDiagonalInverse(int[][] grille){
-        boolean gagne = true;
-        for (int y = 0 ; y<columns ; y++){
-            try {
-                gagne = true;
-                for (int i = 0 ; i<4 ; i++){
-                    if (grille[rows][columns] == grille[rows-i][columns+i] && grille[rows][columns] != 0)
-                        return false;
-                }
-            }catch (Exception e) {
+    public boolean gagneDiagonalG(int[][] grille){
+        for (int x = rows ; x>4 ; x--){
+            for (int y = 0 ; y<columns ; y--){
+                try {
+                    for (int i = 0 ; i<4 ; i++){
+                        if (grille[rows][columns] == grille[rows-1][columns+i] && grille[rows][columns] != 0)
+                            return false;
+                    }
+                }catch (Exception e) {
+            }
             }
         }
-        return gagne;
+        return true;
     }
-
-
-
-
-
-
 
 
     public boolean estGagne(int[][] grille){
-        if (gagneVertical(grille) || gagneHorizontal(grille)){
+        if (gagneVertical(grille) || gagneHorizontal(grille) || gagneDiagonalD(grille) || gagneDiagonalG(grille)){
             return true;
         }
         return false;
