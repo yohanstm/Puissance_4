@@ -1,10 +1,11 @@
-package Puissance_4.src;
-
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.Pane;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Circle;
+import javafx.scene.layout.*;
 import javafx.stage.Stage;
 
 
@@ -34,7 +35,7 @@ public class Puissance5 extends Application {
     @Override
     public void start(Stage stage) {
         stage.setTitle("OBAMA battle royale");
-        loaderjeu = new FXMLLoader(this.getClass().getResource("jeu.fxml"));
+        loaderjeu = new FXMLLoader(this.getClass().getResource("jeu vide.fxml"));
         stage.setScene(this.laScene());
         this.jeu();
         stage.show();
@@ -69,15 +70,15 @@ public class Puissance5 extends Application {
     private void jeu(){
         try {
             this.panelCentral = loaderjeu.load();
-            HBox select_col = new HBox;
-            GridPane plateau = new GridPane;
+            HBox select_col = new HBox();
+            GridPane plateau = new GridPane();
             for(int x=0; x<largeur; x++){
                 Button pos_col = new Button("V"); // a ajouter les trucs sur bouton
-                select_col.getchildren().add(pos_col);
+                select_col.getChildren().add(pos_col);
                 for(int y=0; y<hauteur; y++){
-                    Circle cercle = New Circle();
-                    cercle.setColor(Color.WHITE);
-                    GridPane.add(x, y, cercle);
+                    Circle cercle = new Circle();
+                    //cercle.setColor(Color.WHITE); //faire une classe cercle
+                    plateau.add(cercle, x, y);
                 }
             }
         } catch (Exception e) {

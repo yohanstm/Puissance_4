@@ -1,5 +1,3 @@
-package Puissance_4.src;
-
 import javafx.application.Application;
 
 public class Executable {
