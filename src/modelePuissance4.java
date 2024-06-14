@@ -74,6 +74,13 @@ public class modelePuissance4 {
         }
     }
 
+    public void joueurSuivant(){
+        if (this.joueurActuel == this.joueur1)
+            this.joueurActuel = this.joueur2;
+        else
+            this.joueurActuel = this.joueur1;
+    }
+
 
 
     public boolean gagneVertical(int[][] grille){
